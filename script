@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleção de Latas - Lucas Souza Gomes</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .btn {
+            margin: 10px 0;
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Coleção de Latas</h1>
+    </header>
+
+    <div class="container">
+        <h2>Tabela de Informações</h2>
+
+        <button class="btn" onclick="adicionarLinha()">Adicionar Nova Lata</button>
+
+        <table id="tabela-latas">
+            <thead>
+                <tr>
+                    <th>Cor</th>
+                    <th>Nome</th>
+                    <th>SKU</th>
+                    <th>Tamanho</th>
+                    <th>País de Origem</th>
+                    <th>Cor do Lacre</th>
+                    <th>Valor</th>
+                    <th>Nota para o Sabor</th>
+                    <th>Topo</th>
+                    <th>Base</th>
+                    <th>Frente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Exemplo de linha -->
+                <tr>
+                    <td>Vermelho</td>
+                    <td>Coca-Cola</td>
+                    <td>00123</td>
+                    <td>350ml</td>
+                    <td>Brasil</td>
+                    <td>Prata</td>
+                    <td>5.00</td>
+                    <td>8.5</td>
+                    <td>Texto no topo</td>
+                    <td>Informação na base</td>
+                    <td>Detalhe frontal</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>Projeto desenvolvido por Lucas Souza Gomes</p>
+    </footer>
+
+    <script>
+        // Função para adicionar uma nova linha à tabela
+        function adicionarLinha() {
+            const tabela = document.getElementById('tabela-latas').getElementsByTagName('tbody')[0];
+            const novaLinha = tabela.insertRow();
+
+            // Criando células para a nova linha
+            for (let i = 0; i < 11; i++) {
+                const novaCelula = novaLinha.insertCell(i);
+                novaCelula.contentEditable = true; // Permitir edição do conteúdo
+                novaCelula.textContent = ""; // Deixar as células vazias inicialmente
+            }
+        }
+    </script>
+</body>
+</html>
